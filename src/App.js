@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import Login from "./collageApp/Login";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Photos from "./collageApp/Photos";
+import Ragister from "./collageApp/Ragister";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route index path="/" element={<Ragister />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/cardsphoto" element={<Photos />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
